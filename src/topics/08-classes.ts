@@ -8,6 +8,23 @@ class Person {
     constructor(public name: string, private address: string = 'Unknown') {}
 }
 
+// Extender una clase
+class Hero extends Person {
+    constructor(
+        public alterEgo: string,
+        public age: number,
+        public habilities: string[],
+        // Parámetros del constructor de la clase padre. No es necesario poner "public" o "private" aquí, ya que no se crean nuevas propiedades en esta clase.
+        name: string,
+        address: string = 'Unknown'
+    ) {
+        // Llamar al constructor de la clase padre, y pasar los parámetros necesarios
+        super(name, address);
+    }
+}
+
 const iroman = new Person('Ironman', 'New York 1234');
+const goku = new Hero('Goku', 40, ['Kamehameha', 'Genkidama'], 'Kakarotto', 'Planet Vegeta');
 
 console.log(iroman);
+console.log(goku);
