@@ -1,4 +1,5 @@
-interface Product {
+// Exportar la siguiente interfaz al mundo exterior
+export interface Product {
     description: string;
     price: number;
 }
@@ -18,7 +19,8 @@ interface TaxCalculationOptions {
     tax: number;
 }
 
-const taxCalculation = (options: TaxCalculationOptions): [number, number] => {
+// Exportar la función taxCalculation al mundo exterior para que otros archivos puedan usarla
+export const taxCalculation = (options: TaxCalculationOptions): [number, number] => {
     const { tax, products } = options;
     let total = 0;
 
